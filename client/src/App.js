@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { JsonToTable } from "react-json-to-table";
 import axios from 'axios';
 
 const App = () => {
@@ -82,10 +83,10 @@ const App = () => {
 
     <br /><br />
     <br /><br />
-    <div> <h3>Review Accounting Sheet </h3> {JSON.stringify(data)}</div>
+    <div> <h3>Review Accounting Sheet </h3>  <JsonToTable json={data} /></div>
     <button onClick={() => { setClicked("firstButton") }} left id="submit1" type="submit" >Request Balance Sheet new</button>
     <br /><br />
-    <div> <h3>Review Final Sheet </h3> {JSON.stringify(data2)}</div>
+    <div> <h3>Review Final Sheet </h3> <JsonToTable json={data2} /></div>
     <button onClick={() => { setClicked("secondButton") }} right id="submit2" type="submit" >Request Final Sheet new</button>
   </form>
 
