@@ -15,12 +15,13 @@ app.use(cors())
 app.use(bodyParser.urlencoded({ extended: true }))
 
 
+
+
 app.post("/api/submitFormBackend", (req, res) => {
-    // Form data received in backend after submission
+    // Form data received in backend after submission in clientf rontend
     const details = req.body.details
     formDetails = details
-    //displaying in console
-    console.log(JSON.stringify(details))
+
     //getting data from accounting software
     async function getData() {
         try {
@@ -43,14 +44,18 @@ app.post("/api/submitFormBackend", (req, res) => {
     }
 
     getData()
-    //sending data back as response
+    //sending data back to the frontend as response of first call
     res.send(accountingData)
 })
+
+
+// When second button is clicked to preview that the final data is recveived 
 
 app.post("/api/submitFinalDecision", (req, res) => {
 
     const details = req.body.details
 
+    //details from backend are then routed towards decision engine which compiles a summary
     async function getDatatest() {
         try {
            let res = await axios.post( 'http://localhost:5054/decisionEngine',{formDetails: formDetails, accountingData: accountingData })
@@ -65,6 +70,8 @@ app.post("/api/submitFinalDecision", (req, res) => {
         }
     }
     getDatatest().then(finalData)
+    
+    //finalData summary is received
     res.json(finalData)
 })
 
