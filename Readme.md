@@ -1,11 +1,11 @@
-Demyst Loan Application code 
-React was used as frontend (client) and backend using node/express JS
+# # Demyst Loan Application code 
+ React was used as frontend (client) and backend using node/express JS
 
-Frontend
+# Frontend
 react app in \client\src\App.js
 
 
-Backend API services are divided in to 3 Micro Services
+# Backend API services are divided in to 3 Micro Services
 1. mainServer                backend\mainServer              index.js
 2. accountingSoftware        backend\accountingSoftware      accountingSoftware.js
 3. decisionEngine            backend\decisionEngine          decisionEngine
@@ -13,14 +13,14 @@ Backend API services are divided in to 3 Micro Services
 Backend also has sample Accounting sheet accountingData.json that is retrived by accountingSoftware as per the simulation
 
 
-Ports:
+# Ports:
 Frontend/Client runs on - localhost:3000
 mainServer e API runs on - localhost:5000
 accountingSoftware API runs on - localhost:5007
 decisionEngine API runs on - localhost:5054
 
 
-To run Locally
+# To run Locally
 
 Client
 cd .\client\
@@ -46,7 +46,7 @@ node .\decisionSoftware.js\
 
 
 
-Folder structure:
+# Folder structure:
 
 ├── backend
 │   ├── mainServer                      // to receive calls from frontend and communicate with thirdparty apps
@@ -57,7 +57,7 @@ Folder structure:
     ├── public
     └── src
     
- Testing:
+ # Testing:
  node repo deprication identified using
  
  npx start-test 'http-server -c-1 .' 5000 'cypress run'
