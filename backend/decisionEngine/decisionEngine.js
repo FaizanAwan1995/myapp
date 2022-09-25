@@ -14,6 +14,10 @@ app.post("/decisionEngine", (req, res) => {
     const details = req.body.formDetails
     let accountingData = req.body.accountingData
 
+    // Business Logic
+    // If a business has made a profit in the last 12 months. The final value to be sent with a field "preAssessment": "60" which means the Loan is favored to be approved 60% of the requested value. 
+    // If the average asset value across 12 months is greater than the loan amount then "preAssessment": "100"
+    // Default value to be used 20
 
 
     var profitLossVal = 0;
@@ -37,7 +41,8 @@ app.post("/decisionEngine", (req, res) => {
     if (avgAssets > details.amount) {
         preAssessment = 100
     }
-
+    
+    //finalData Summary is prepared here
     var finalData = { "Business Details": { "Name": details.name, "Year Established": details.yearEst, "Summary of Profit & Loss": profitLossVal }, "preAssesment value in %": preAssessment };
     res.send(finalData)
 
