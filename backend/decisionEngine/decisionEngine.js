@@ -43,7 +43,7 @@ app.post("/decisionEngine", (req, res) => {
     }
     
     //finalData Summary is prepared here
-    var finalData = { "Business Details": { "Name": details.name, "Year Established": details.yearEst, "Summary of Profit & Loss": profitLossVal }, "preAssesment value in %": preAssessment };
+    var finalData = { "Business Details": { "Name": details.name, "Year Established": details.yearEst, "Summary of Profit & Loss": profitLossVal }, "preAssesment value in %": preAssessment, "Approved Loan: ": ((details.amount)*(preAssessment/100))};
     res.send(finalData)
 
 })
