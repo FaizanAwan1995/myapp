@@ -1,0 +1,21 @@
+verssion: "3.8"
+services:
+  backend:
+    build: ./backend
+    container_name: backend_c
+    ports:
+      - '5000:5000'
+      - '5007:5007'
+      - '5054:5054'
+    volumes:
+      - ./backend:app
+      - ./app/node_modules
+
+
+  client:
+    build: ./client
+    container_name: client_c
+    ports:
+      - '3000:3000'
+    stdin_open: true
+    tty: true
