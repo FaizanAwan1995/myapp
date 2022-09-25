@@ -1,4 +1,4 @@
-# # Demyst Loan Application code 
+# Demyst Loan Application code 
  React was used as frontend (client) and backend using node/express JS
 
 # Frontend
