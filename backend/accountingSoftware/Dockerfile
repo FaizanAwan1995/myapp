@@ -1,5 +1,5 @@
 FROM node:alpine
-ENV PORT 5069
+ENV PORT 5007
 
 WORKDIR /app
 
