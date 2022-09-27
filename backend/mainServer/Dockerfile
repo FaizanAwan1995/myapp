@@ -1,5 +1,5 @@
 FROM node:alpine
-ENV PORT 5069
+ENV PORT 5000
 
 WORKDIR /app
 
@@ -10,6 +10,6 @@ COPY ./ ./
 
 RUN npm install
 
-EXPOSE 5069
+EXPOSE 5000
 
-CMD ["node","index.js"]
+CMD ["npm","start"]
