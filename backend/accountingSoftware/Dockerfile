@@ -12,4 +12,4 @@ RUN npm install
 
 EXPOSE 5007
 
-CMD ["node","accountingSoftware.js"]
+CMD ["npm","start"]
